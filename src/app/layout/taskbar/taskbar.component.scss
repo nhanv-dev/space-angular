@@ -1,0 +1,49 @@
+.app-layout__taskbar {
+
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: max-content;
+    height: 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 16px;
+    gap: 8px;
+
+    &__home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 0px 16px;
+        height: 100%;
+        border-radius: 0.25rem;
+        cursor: pointer;
+
+        i {
+            font-size: 16px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 0px 16px;
+        height: 100%;
+        border-radius: 0.25rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+    }
+}
