@@ -14,13 +14,14 @@ export class TaskBarComponent implements OnInit {
 
   constructor() {
     this.list = [
-      { title: 'Dự án', link: '/main/home', icon: '<i class="fa-solid fa-house"></i>' },
-      { title: 'Việc cần làm', link: '/main/home', icon: 'fa fa-solid fa-house' },
-      { title: 'Diagram', link: '/main/diagram', icon: 'fa-solid fa-diagram-project' },
+      { title: 'Project', link: '/main/home', icon: 'fa-solid fa-bars-progress' },
+      { title: 'Blog', link: '/main/home', icon: 'fa-solid fa-blog' },
+      { title: 'Calendar', link: '/main/home', icon: 'fa-regular fa-calendar' },
+      { title: 'Diagram', link: '/main/diagram', icon: 'fa-solid fa-database' },
     ]
   }
 
   ngOnInit(): void {
   }
 
-}
+} 

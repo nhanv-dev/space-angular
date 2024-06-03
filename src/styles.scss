@@ -18,3 +18,44 @@
      margin: 0;
      list-style: none;
  }
+
+ html,
+ body {
+     height: 100%;
+ }
+
+ body {
+     margin: 0;
+     font-family: Roboto, "Helvetica Neue", sans-serif;
+ }
+
+ button {
+     border: none;
+     background-color: transparent;
+     outline: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ :root {
+     --backgroud-taskbar: #1C3B5D;
+     --width-sidebar: 60px;
+     --height-taskbar: 46px;
+
+     --border-radius-2: 0.2rem;
+     --border-radius-2-5: 0.25rem;
+ }
+
+
+ .canvas-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 20px;
+ }
+
+ canvas {
+     border: 1px solid black;
+     display: block;
+ }
+ 

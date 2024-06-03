@@ -4,7 +4,7 @@ import { DiagramHomeComponent } from './home/home.component';
 
 @NgModule({
     imports: [
-        DiagramRoutingModule,
+        DiagramRoutingModule, 
     ],
     declarations: [
         DiagramHomeComponent,
