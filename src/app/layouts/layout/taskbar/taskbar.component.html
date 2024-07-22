@@ -1,39 +1,14 @@
-<div class="app-layout__taskbar">
-    <div class="app-layout__taskbar__home">
-        <i class="fa fa-brands fa-windows"></i>
-    </div>
-    <div class="app-layout__taskbar__list flex-1">
-        <div *ngFor="let item of list" class="app-layout__taskbar__item">
-            <div class="app-layout__taskbar__item__icon">
-                <i [class]="item.icon"></i>
-            </div>
-            <div class="app-layout__taskbar__item__title">
-                {{item.title}}
-            </div>
-        </div>
-        <div class="app-layout__taskbar__list__separator"></div>
-
-        <div class="app-layout__taskbar__item">
-            <div class="app-layout__taskbar__item__title">
-                Search
-            </div>
-        </div>
-    </div>
+<div class="app-layout__taskbar"> 
     <div class="app-layout__taskbar__list">
-        <div class="app-layout__taskbar__item">
-            <div class="app-layout__taskbar__item__title">
-                Search
-            </div>
-        </div>
-        <div class="app-layout__taskbar__item">
-            <div class="app-layout__taskbar__item__title">
-                Search
-            </div>
-        </div>
-        <div class="app-layout__taskbar__item">
-            <button class="app-layout__taskbar__item__icon">
-                <i class="fa-solid fa-arrow-down"></i>
-            </button>
-        </div>
+        <ng-container *ngFor="let item of list">
+            <a routerLink="/main/diagram" class="app-layout__taskbar__item">
+                <div class="app-layout__taskbar__item__icon">
+                    <i [class]="item.icon"></i>
+                </div>
+                <div class="app-layout__taskbar__item__title">
+                    {{item.title}}
+                </div>
+            </a>
+        </ng-container> 
     </div>
 </div>

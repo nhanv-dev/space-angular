@@ -1,3 +1,4 @@
+import { Renderer2 } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { fabric } from 'fabric';
 
@@ -6,33 +7,31 @@ import { fabric } from 'fabric';
 })
 export class FabricService {
   private canvas!: fabric.Canvas;
+  private renderer!: Renderer2;
 
-  initialize(canvasElement: HTMLCanvasElement): void {
+  initialize(
+    canvasElement: HTMLCanvasElement,
+    renderer: Renderer2
+  ): void {
+    this.renderer = renderer;
+    console.log(window.innerHeight);
     this.canvas = new fabric.Canvas(canvasElement, {
       width: window.innerWidth,
-      height: window.innerHeight
+      height: window.innerHeight - 60
     });
   }
 
-  addRect(): void {
-    const rect = new fabric.Rect({
-      left: 100,
-      top: 100,
-      fill: 'red',
-      width: 100,
-      height: 100
-    });
-    this.canvas.add(rect);
-  }
+  addTable(): any {
+    const div = this.renderer.createElement('div');
+    this.renderer.setStyle(div, 'position', 'absolute');
+    this.renderer.setStyle(div, 'top', '100px');
+    this.renderer.setStyle(div, 'left', '100px');
+    this.renderer.setStyle(div, 'width', '100px');
+    this.renderer.setStyle(div, 'height', '50px');
+    this.renderer.setStyle(div, 'background', 'yellow');
+    this.renderer.setProperty(div, 'innerHTML', 'HTML Element');
 
-  addCircle(): void {
-    const circle = new fabric.Circle({
-      left: 200,
-      top: 200,
-      radius: 50,
-      fill: 'green'
-    });
-    this.canvas.add(circle);
+    return div;
   }
 
   clearCanvas(): void {

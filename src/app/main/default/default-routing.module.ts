@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { NavigationEnd, Router, RouterModule, Routes } from '@angular/router';
-import { DefaultHomeComponent } from './home/default-home.component'; 
-import { MainLayoutComponent } from '../../layouts/main-layout/main-layout.component';
+import { DefaultHomeComponent } from './home/default-home.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: MainLayoutComponent,
         children: [
-            { path: 'home', component: DefaultHomeComponent, data: { permission: 'Pages.Main.Default.Home' } },
+            {
+                path: 'home', component: DefaultHomeComponent, data: {
+                    permission: 'Pages.Main.Default.Home',
+                    nav:'123'
+                }
+            },
+            { path: 'project', component: DefaultHomeComponent, data: { permission: 'Pages.Main.Default.Home' } },
         ]
     },
 ];

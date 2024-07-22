@@ -10,18 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskBarComponent implements OnInit {
 
-  list: any[];
+  list: TaskBarLink[];
 
   constructor() {
     this.list = [
+      { title: 'Go Back', link: '/main/home', icon: 'fa-solid fa-arrow-rotate-left' },
       { title: 'Project', link: '/main/home', icon: 'fa-solid fa-bars-progress' },
-      { title: 'Blog', link: '/main/home', icon: 'fa-solid fa-blog' },
       { title: 'Calendar', link: '/main/home', icon: 'fa-regular fa-calendar' },
       { title: 'Diagram', link: '/main/diagram', icon: 'fa-solid fa-database' },
-    ]
+      { title: 'NoonPost', link: '/main/home', icon: 'fa-solid fa-blog' },
+    ];
   }
 
   ngOnInit(): void {
   }
 
-} 
+}
+
+interface TaskBarLink {
+  title: string,
+  link: string,
+  icon: string
+}

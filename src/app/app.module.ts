@@ -4,7 +4,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from "./app.component";
 import { LayoutComponent } from "./layouts/layout/layout.component";
-import { MainLayoutComponent } from "./layouts/main-layout/main-layout.component";
+import { DiagramLayoutComponent } from "./layouts/diagram-layout/diagram-layout.component";
 
 @NgModule({
     declarations: [
@@ -14,7 +14,7 @@ import { MainLayoutComponent } from "./layouts/main-layout/main-layout.component
         BrowserModule,
         AppRoutingModule,
         LayoutComponent,
-        MainLayoutComponent
+        DiagramLayoutComponent
     ],
     providers: [
         provideAnimationsAsync()

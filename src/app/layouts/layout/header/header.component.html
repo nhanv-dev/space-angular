@@ -1,0 +1,16 @@
+<header class="app-layout__header" [ngClass]="{'extend': isExtend}">
+    <div class="app-layout__header__breadcrumb">
+        <ng-container *ngFor="let item of breadscrumb; let in=index">
+            <p class="app-layout__header__breadcrumb__item" *ngIf="!item.url">
+                {{item.label}}
+            </p>
+            <a class="app-layout__header__breadcrumb__link" *ngIf="item.url">
+                {{item.label}}
+            </a>
+            <i class="fa-solid fa-angle-right" *ngIf="gethide(in)"></i>
+        </ng-container>
+    </div>
+    <div class="app-layout__header__right">
+
+    </div>
+</header>

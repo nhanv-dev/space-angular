@@ -1,7 +1,12 @@
-<div class="app-layout"> 
+<div class="app-layout">
+    <app-layout-header [isExtend]="sidebarComponent ? sidebarComponent.isExtend : true"></app-layout-header>
+
     <main class="app-layout__main">
-        <app-sidebar></app-sidebar>
-        <ng-content></ng-content>
+        <app-sidebar #sidebarComponent></app-sidebar>
+        <div class="app-layout__main__body" [ngClass]="{'extended':sidebarComponent?.isExtend}">
+            <ng-content></ng-content>
+        </div>
     </main>
+
     <app-taskbar></app-taskbar>
 </div>

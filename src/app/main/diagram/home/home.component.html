@@ -1,8 +1,15 @@
-<div class="toolbar">
-    <button (click)="addRect()">Add Rectangle</button>
-    <button (click)="addCircle()">Add Circle</button>
-    <button (click)="clearCanvas()">Clear Canvas</button>
+<div class="home" style="height: 100%;">
+
+    <div class="toolbar">
+        <button (click)="addHtmlElement()">Add HTML Element</button>
+    </div>
+    <div class="canvas-container"> 
+        <canvas #canvas>
+
+        </canvas>
+        <a [routerLink]="'/admin'">admin</a>
+        <!-- <div #htmlContainer class="html-container" style="position: absolute; top: 0; left: 0;"></div> -->
+
+    </div>
 </div>
-<div class="canvas-container">
-    <canvas #canvas></canvas>
-</div>
+ 
