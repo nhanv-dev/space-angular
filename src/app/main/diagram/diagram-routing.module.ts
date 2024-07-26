@@ -9,6 +9,7 @@ const routes: Routes = [
         component: DiagramLayoutComponent,
         children: [
             { path: 'home', component: DiagramHomeComponent, data: { permission: 'Pages.Diagram.Home' }, title: 'Space - Diagram' },
+            { path: '**', component: DiagramHomeComponent, data: { permission: 'Pages.Diagram.Home' }, title: 'Space - Diagram' },
 
         ]
     }

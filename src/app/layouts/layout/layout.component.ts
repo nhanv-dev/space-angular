@@ -1,8 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { LayoutHeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TaskBarComponent } from './taskbar/taskbar.component';
 import { NgClass } from '@angular/common';
+import { SharedLayoutService } from '../../shared/services/shared-layout.service';
 
 @Component({
   selector: 'app-layout',
@@ -17,5 +18,16 @@ import { NgClass } from '@angular/common';
   styleUrl: './layout.component.scss'
 })
 export class LayoutComponent {
-  @ViewChild('sidebarComponent') sidebarComponent!: SidebarComponent;
+  isExpand: boolean = false;
+
+  constructor(private sharedLayoutService: SharedLayoutService) {
+
+  }
+
+  ngOnInit(): void {
+    this.sharedLayoutService.isExpandSidebar$.subscribe(isExpand => {
+      this.isExpand = isExpand;
+    });
+  }
+
 }

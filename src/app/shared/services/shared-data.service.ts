@@ -10,6 +10,7 @@ export class SharedDataService {
     breadcrumb$ = this.breadcrumbSource.asObservable();
 
     setBreadcrumb(...items: BreadcrumbLink[]): void {
+        console.log(items)
         this.breadcrumbSource.next(items);
     }
 }

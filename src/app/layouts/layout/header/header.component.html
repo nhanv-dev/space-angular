@@ -1,5 +1,9 @@
-<header class="app-layout__header" [ngClass]="{'extend': isExtend}">
+<header class="app-layout__header" [ngClass]="{'expanded': isExpand}">
     <div class="app-layout__header__breadcrumb">
+        <p class="app-layout__header__breadcrumb__item app-layout__header__breadcrumb__item--badge">
+            isomorphic
+        </p>
+        <i class="fa-solid fa-angle-right"></i>
         <ng-container *ngFor="let item of breadscrumb; let in=index">
             <p class="app-layout__header__breadcrumb__item" *ngIf="!item.url">
                 {{item.label}}
@@ -11,6 +15,17 @@
         </ng-container>
     </div>
     <div class="app-layout__header__right">
-
+        <div class="app-layout__header__right__flex">
+            <div class="app-layout__header__right__button">
+                <button>
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+            </div>
+            <div class="app-layout__header__right__button">
+                <button>
+                    <i class="fa-regular fa-envelope"></i>
+                </button>
+            </div>
+        </div>
     </div>
 </header>

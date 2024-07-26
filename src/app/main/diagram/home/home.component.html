@@ -1,15 +1,6 @@
-<div class="home" style="height: 100%;">
-
-    <div class="toolbar">
-        <button (click)="addHtmlElement()">Add HTML Element</button>
-    </div>
-    <div class="canvas-container"> 
-        <canvas #canvas>
-
-        </canvas>
-        <a [routerLink]="'/admin'">admin</a>
-        <!-- <div #htmlContainer class="html-container" style="position: absolute; top: 0; left: 0;"></div> -->
-
-    </div>
+<div id="diagram-home-page">
+    
+    
+    <div #myDiagram style="width: 800px; height: 600px; border: solid 1px black;"></div>
+    <button #addClassButton>Add Class</button>
 </div>
- 

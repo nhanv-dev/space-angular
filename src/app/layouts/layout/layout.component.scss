@@ -1,9 +1,7 @@
 .app-layout {
-    min-height: calc(100vh);
-    // max-height: calc(100vh);
+    min-height: calc(100vh); 
     width: 100%;
-
-    // margin-bottom: 60px; 
+ 
     &__main {
         padding: 0 16px;
     }
@@ -11,7 +9,7 @@
     &__main__body {
         height: 100%;
         margin-left: var(--width-sidebar);
-        transition: margin-left .25s ease;
+        transition: var(--trans-extend-layout);
 
         &.extended {
             margin-left: var(--width-extend-sidebar);

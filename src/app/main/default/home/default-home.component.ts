@@ -9,12 +9,12 @@ import { SharedDataService } from "../../../shared/services/shared-data.service"
 export class DefaultHomeComponent {
 
     constructor(private sharedDataService: SharedDataService) {
-        this.sharedDataService.setBreadcrumb(
-            { label: 'Space', url: '/main/home' },
-            { label: 'Home' },
+        this.sharedDataService.setBreadcrumb( 
+            { label: 'Trang chủ' },
         )
     }
 
     ngOnInit(): void {
+       
     }
 }
