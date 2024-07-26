@@ -9,8 +9,12 @@
     /* ---------------------------- Responsive layout --------------------------- */
     --width-sidebar: 70px;
     --width-extend-sidebar: 200px;
+    --height-header: 60px;
     --height-taskbar: 46px;
-    --trans-extend-layout: margin-left 0.25s ease, left 0.25s ease; 
+    --trans-extend-layout: margin-left 0.25s ease, left 0.25s ease;
+    /* ----------------------------- Diagram layout ----------------------------- */
+    --width-sidebar-diagram: 230px;
+    --height-header-diagram: 30px;
     /* --------------------------------- Common --------------------------------- */
     --background-body: #ccc;
     --border-radius-small: 0.2rem;
@@ -100,10 +104,24 @@ button {
 }
 
 #diagram-home-page {
-    display: flex;
-    box-sizing: border-box; 
-    overflow: hidden; 
+    width: 100%;
+    height: 100%;
 
-  
- 
+    .toolbar {
+        display: flex;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+
+    .diagram {
+        width: 100%;
+        height: calc(100vh - var(--height-header-diagram) - var(--height-header) - 36px);
+        border: 2px solid #ccc;
+        border-radius: var(--border-radius-medium);
+
+        &__node {}
+    }
+
+
 }

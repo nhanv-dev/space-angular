@@ -1,6 +1,6 @@
 .app-layout__header {
-    height: 60px;
-    margin-left: 70px;
+    height: var(--height-header);
+    margin-left: var(--width-sidebar);
     color: black;
     background-color: var(--background-header);
     display: flex;
