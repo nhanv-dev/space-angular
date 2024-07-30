@@ -56,36 +56,64 @@ export class DiagramHomeComponent implements AfterViewInit {
     this.diagram.toolManager.draggingTool.isGridSnapEnabled = true;
     this.diagram.toolManager.resizingTool.isGridSnapEnabled = true;
 
-    // Define the node template for classes
-    this.diagram.nodeTemplate = $(
-      go.Node,
-      'Auto',
-      { locationSpot: go.Spot.Center, selectionAdorned: false, resizable: true, },
-      $(go.Shape, 'Rectangle', { fromLinkable: true, toLinkable: true, css: 'diagram__shape--rectangle' }),
-      $(go.Panel, 'Vertical',
-        $(go.TextBlock, { editable: true, text: 'Class Name' }, new go.Binding('text', 'text').makeTwoWay()),
-        $(go.TextBlock, { editable: true }, new go.Binding('text', 'attributes', (attributes) => attributes.join('\n')).makeTwoWay())
-      )
-    );
+    this.diagram.nodeTemplate =
+      new go.Node("Auto", {
+        locationSpot: go.Spot.Center,
+        selectionAdorned: false,
+        resizable: true,
+      }).add(
+        new go.Shape("RoundedRectangle", {
+          fill: 'white',
+          stroke: 'black', // Set the border color here
+          strokeWidth: 2, // Set the border width here
+          fromLinkable: true,
+          toLinkable: true,
+          parameter1: 2,
+        }),
+        new go.Panel("Vertical", {
+          background: 'white',
+          defaultAlignment: go.Spot.Left,
+          padding: new go.Margin(10, 10, 10, 10),
+        }).add(
+          new go.TextBlock(
+            {
+              font: 'bold 14px sans-serif',
+            }
+          ).bind("text", "text"),
+          new go.Panel("Table", {
+            background: 'white',
+            itemTemplate:
+              new go.Panel("TableRow")
+                .add(
+                  new go.TextBlock({ column: 0, editable: true, margin: new go.Margin(4, 10, 4, 0), alignment: go.Spot.Left }).bind("text", "key"),
+                  new go.TextBlock({ column: 1, editable: true, margin: new go.Margin(4, 30, 4, 0), alignment: go.Spot.Left }).bind("text", "name"),
+                  new go.TextBlock({ column: 2, editable: true, margin: new go.Margin(4, 10, 4, 0), alignment: go.Spot.Left }).bind("text", "type"),
+                )
+          }).bind("itemArray", "attributes")
+        )
+      );
 
-    // Define the link template for connections between classes
     this.diagram.linkTemplate = $(
       go.Link,
-      { routing: go.Link.Orthogonal, corner: 4 },
-      $(
-        go.Shape,
-        { strokeWidth: 2, stroke: 'black' }
-      ),
-      $(
-        go.Shape,
-        { toArrow: 'standard', stroke: null }
-      )
+      { routing: go.Routing.Orthogonal, corner: 2 },
+      $(go.Shape, { strokeWidth: 2, stroke: 'black' }),
+      $(go.Shape, { toArrow: 'standard', stroke: null })
     );
 
     this.diagram.model = new go.GraphLinksModel(
       [
-        { key: 1, text: 'Class 1', attributes: ['attribute1: type', 'attribute2: type'] },
-        { key: 2, text: 'Class 2', attributes: ['attribute1: type'] }
+        {
+          key: 1, text: 'Class 1', attributes: [
+            { name: 'Attribute 1', type: 'string', key: 'PK' },
+            { name: 'Attribute 2', type: 'number', key: 'FK' }
+          ]
+        },
+        {
+          key: 2, text: 'Class 2', attributes: [
+            { name: 'Attribute 1', type: 'string', key: 'PK' },
+            { name: 'Attribute 2', type: 'number', key: 'FK' }
+          ]
+        },
       ],
       [
         { from: 1, to: 2 }
