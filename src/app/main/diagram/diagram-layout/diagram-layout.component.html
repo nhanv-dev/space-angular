@@ -1,47 +1,47 @@
-<div class="app-main-layout" [ngClass]="{'expanded': isExpand}">
-    <div class="app-main-layout__header">
+<div class="diagram-layout" [ngClass]="{'expanded': isExpand}">
+    <div class="diagram-layout__header">
         Project 
     </div>
-    <div class="app-main-layout__body">
-        <div class="app-main-layout__sidebar">
-            <div class="app-main-layout__sidebar__header">
+    <div class="diagram-layout__body">
+        <div class="diagram-layout__sidebar">
+            <div class="diagram-layout__sidebar__header">
                 <p>Database Explorer</p>
             </div>
-            <div class="app-main-layout__sidebar__list">
-                <p class="app-main-layout__sidebar__item">
+            <div class="diagram-layout__sidebar__list">
+                <p class="diagram-layout__sidebar__item">
                     <i class="fa-solid fa-caret-right"></i>
                     <a href="">Schemas</a>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </p>
-                <p class="app-main-layout__sidebar__item">
+                <p class="diagram-layout__sidebar__item">
                     <i class="fa-solid fa-caret-right"></i>
                     <a href="">Tables</a>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </p>
-                <p class="app-main-layout__sidebar__item">
+                <p class="diagram-layout__sidebar__item">
                     <i class="fa-solid fa-caret-right"></i>
                     <a href="">References</a>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </p>
-                <p class="app-main-layout__sidebar__item">
+                <p class="diagram-layout__sidebar__item">
                     <a href="">Virtual references</a>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </p>
-                <p class="app-main-layout__sidebar__item">
+                <p class="diagram-layout__sidebar__item">
                     <a href="">Views</a>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </p>
-                <p class="app-main-layout__sidebar__item">
+                <p class="diagram-layout__sidebar__item">
                     <a href="">Functions</a>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </p>
-                <p class="app-main-layout__sidebar__item">
+                <p class="diagram-layout__sidebar__item">
                     <a href="">Procedures</a>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </p>
             </div>
         </div>
-        <div class="app-main-layout__content">
+        <div class="diagram-layout__content">
             <router-outlet></router-outlet> 
         </div>
     </div>

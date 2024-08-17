@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, ViewEncapsulation } from '@angular/core';
 import { LayoutHeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TaskBarComponent } from './taskbar/taskbar.component';
@@ -15,7 +15,8 @@ import { SharedLayoutService } from '../../shared/services/shared-layout.service
     NgClass,
   ],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss'
+  styleUrl: './layout.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class LayoutComponent {
   isExpand: boolean = false;

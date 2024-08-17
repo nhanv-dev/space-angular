@@ -7,120 +7,55 @@
             <svg style="height: 24px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 26"><rect width="10.16" height="19.93" fill="currentColor" rx="5.08" transform="rotate(29.49 -5.18 20.77) skewX(.85)"></rect><rect width="10.16" height="25.62" fill="currentColor" rx="5.08" transform="matrix(.87 .492 -.48 .878 27.17 0)"></rect><rect width="10.16" height="10.25" fill="currentColor" opacity=".5" rx="5.08" transform="rotate(29.49 -8.24 75.34) skewX(.85)"></rect></svg>
         </span>
     </div>
-    <ul class="app-layout__sidebar__list flex--1 border-bottom">
-        <div class="app-layout__sidebar__title">
-            <p class="app-layout__sidebar__title__content">
-                General
-            </p>
-        </div>
-        <li class="app-layout__sidebar__item active">
-            <div class="app-layout__sidebar__item__header">
-                <a class="app-layout__sidebar__item__link" [routerLink]="['/main/home']">
-                    <span class="app-layout__sidebar__item__link__icon">
-                        <i class="fa-solid fa-house"></i>
-                    </span>
-                    <span class="app-layout__sidebar__item__link__title">Trang chủ</span>
-                </a>
-            </div>
-        </li>
-        <li class="app-layout__sidebar__item">
-            <div class="app-layout__sidebar__item__header">
-                <button class="app-layout__sidebar__item__link" (click)="handleOpenMenu($event)">
-                    <span class="app-layout__sidebar__item__link__icon">
-                        <i class="fa-solid fa-layer-group"></i>
-                    </span>
-                    <span class="app-layout__sidebar__item__link__title">Dự án</span>
-                </button>
-            </div>
-            <div class="app-layout__sidebar__item__group">
-                <ul class="app-layout__sidebar__item__group__list">
-                    <li class="app-layout__sidebar__item">
-                        <div class="app-layout__sidebar__item__header">
-                            <a class="app-layout__sidebar__item__link" [routerLink]="['/main/home']">
-                                <span class="app-layout__sidebar__item__link__icon">
-                                    <ng-container *ngTemplateOutlet="iconDropdown;"></ng-container>
-                                    <i class="fa-solid fa-house"></i>
-                                </span>
-                                <span class="app-layout__sidebar__item__link__title">Dự án ban hành</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="app-layout__sidebar__item">
-                        <div class="app-layout__sidebar__item__header">
-                            <a class="app-layout__sidebar__item__link" [routerLink]="['/main/home']">
-                                <span class="app-layout__sidebar__item__link__icon">
-                                    <ng-container *ngTemplateOutlet="iconDropdown;"></ng-container>
-                                    <i class="fa-solid fa-house"></i>
-                                </span>
-                                <span class="app-layout__sidebar__item__link__title">Dự án AmigoTask</span>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li class="app-layout__sidebar__item">
-            <div class="app-layout__sidebar__item__header">
-                <a class="app-layout__sidebar__item__link" [routerLink]="['/main/diagram']">
-                    <span class="app-layout__sidebar__item__link__icon">
-                        <i class="fa-solid fa-chart-pie"></i>
-                    </span>
-                    <span class="app-layout__sidebar__item__link__title">Dashboard</span>
-                </a>
-            </div>
-        </li>
-        <li class="app-layout__sidebar__item">
-            <div class="app-layout__sidebar__item__header">
-                <a class="app-layout__sidebar__item__link" [routerLink]="['/main/diagram']">
-                    <span class="app-layout__sidebar__item__link__icon">
-                        <i class="fa-regular fa-folder"></i>
-                    </span>
-                    <span class="app-layout__sidebar__item__link__title">Quản lý File</span>
-                </a>
-            </div>
-        </li>
-        <div class="app-layout__sidebar__separator"></div>
-        <div class="app-layout__sidebar__title">
-            <p class="app-layout__sidebar__title__content">
-                Database
-            </p>
-        </div>
-        <li class="app-layout__sidebar__item">
-            <div class="app-layout__sidebar__item__header">
-                <a class="app-layout__sidebar__item__link" [routerLink]="['/main/diagram']">
-                    <span class="app-layout__sidebar__item__link__icon">
-                        <i class="fa-solid fa-database"></i>
-                    </span>
-                    <span class="app-layout__sidebar__item__link__title">Quản lý Database</span>
-                </a>
-            </div>
-        </li>
-        <li class="app-layout__sidebar__item">
-            <div class="app-layout__sidebar__item__header">
-                <a class="app-layout__sidebar__item__link" [routerLink]="['/main/diagram']">
-                    <span class="app-layout__sidebar__item__link__icon">
-                        <i class="fa-solid fa-diagram-project"></i>
-                    </span>
-                    <span class="app-layout__sidebar__item__link__title">Quản lý Database</span>
-                </a>
-            </div>
-        </li>
-        <div class="app-layout__sidebar__separator"></div>
-        <div class="app-layout__sidebar__title">
-            <p class="app-layout__sidebar__title__content">
-                App
-            </p>
-        </div> 
-        <li class="app-layout__sidebar__item">
-            <div class="app-layout__sidebar__item__header">
-                <a class="app-layout__sidebar__item__link" [routerLink]="['/main/diagram']">
-                    <span class="app-layout__sidebar__item__link__icon">
-                        <i class="fa-solid fa-music"></i>
-                    </span>
-                    <span class="app-layout__sidebar__item__link__title">Music</span>
-                </a>
-            </div>
-        </li>
+  
+    <ul class="app-layout__sidebar__list flex--1">
+        
+        <ng-container *ngFor="let item of list; let i=index"> 
+            <div *ngIf="item.groupName && (i==0 || (i > 0 && list[i-1].groupName != item.groupName))" class="app-layout__sidebar__title">
+                <p class="app-layout__sidebar__title__content">
+                    {{item.groupName}}
+                </p>
+            </div> 
+            <li *ngIf="item.routerLink && !item.subRouter" class="app-layout__sidebar__item" 
+                [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+            >
+                <div class="app-layout__sidebar__item__header">
+                    <a class="app-layout__sidebar__item__link" [routerLink]="[item.routerLink]">
+                        <span class="app-layout__sidebar__item__link__icon">
+                            <i [class]="item.routerIcon"></i>
+                        </span>
+                        <span class="app-layout__sidebar__item__link__title">{{item.routerName}}</span>
+                    </a>
+                </div>
+            </li> 
+            <li *ngIf="!item.routerLink && item.subRouter" class="app-layout__sidebar__item" 
+                [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+            >
+                <div class="app-layout__sidebar__item__header">
+                    <button class="app-layout__sidebar__item__link" (click)="handleOpenMenu($event)" [routerLink]="[item.routerLink]">
+                        <span class="app-layout__sidebar__item__link__icon">
+                            <i [class]="item.routerIcon"></i>
+                        </span> 
+                        <span class="app-layout__sidebar__item__link__title">{{item.routerName}}</span>
+                    </button>
+                </div>
+                <div class="app-layout__sidebar__item__group">
+                    <ul class="app-layout__sidebar__item__group__list">
+                        <li *ngFor="let _item of item.subRouter" class="app-layout__sidebar__item">
+                            <div class="app-layout__sidebar__item__header">
+                                <a class="app-layout__sidebar__item__link" [routerLink]="[_item.routerLink]">
+                                    <span class="app-layout__sidebar__item__link__icon">
+                                        <!-- <ng-container *ngTemplateOutlet="iconDropdown"></ng-container> -->
+                                        <i [class]="_item.routerIcon"></i>
+                                    </span>
+                                    <span class="app-layout__sidebar__item__link__title">{{_item.routerName}}</span>
+                                </a>
+                            </div>
+                        </li> 
+                    </ul>
+                </div>
+            </li>
+        </ng-container> 
     </ul>
     <ul class="app-layout__sidebar__options app-layout__sidebar__list">
         <li class="app-layout__sidebar__item">
@@ -140,6 +75,16 @@
                         <i class="fa-solid fa-gear"></i>
                     </span>
                     <span class="app-layout__sidebar__item__link__title">Cài đặt hệ thống</span>
+                </a>
+            </div>
+        </li>
+        <li class="app-layout__sidebar__item">
+            <div class="app-layout__sidebar__item__header">
+                <a class="app-layout__sidebar__item__link" [routerLink]="['/main/diagram']">
+                    <span class="app-layout__sidebar__item__link__icon">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </span>
+                    <span class="app-layout__sidebar__item__link__title">Giới thiệu</span>
                 </a>
             </div>
         </li>

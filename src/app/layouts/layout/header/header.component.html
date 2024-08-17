@@ -1,9 +1,9 @@
+<div class="app-layout__header__padding"></div>
 <header class="app-layout__header" [ngClass]="{'expanded': isExpand}">
     <div class="app-layout__header__breadcrumb">
         <p class="app-layout__header__breadcrumb__item app-layout__header__breadcrumb__item--badge">
-            isomorphic
+            isomorphic.inc
         </p>
-        <i class="fa-solid fa-angle-right"></i>
         <ng-container *ngFor="let item of breadscrumb; let in=index">
             <p class="app-layout__header__breadcrumb__item" *ngIf="!item.url">
                 {{item.label}}
@@ -25,6 +25,38 @@
                 <button>
                     <i class="fa-regular fa-envelope"></i>
                 </button>
+            </div>
+            <div class="app-layout__header__right__user">
+                <button class="app-layout__header__right__user__avatar" (click)="isOpenProfile=!isOpenProfile">
+                    <img src="{{userInfo.avatar}}">
+                </button>
+                <div class="app-layout__header__right__user__panel" *ngIf="isOpenProfile">
+                    <div class="app-layout__header__right__user__panel__info">
+                        <div class="app-layout__header__right__user__panel__info__avatar">
+                            <img src="{{userInfo.avatar}}">
+                        </div>
+                        <div class="flex-1">
+                            <p class="app-layout__header__right__user__panel__fullName">{{userInfo.fullName}}</p>
+                            <p class="app-layout__header__right__user__panel__roleName">{{userInfo.roleName}}</p>
+                        </div>
+                    </div>
+                    <button (click)="isOpenProfile=!isOpenProfile" class="app-layout__header__right__user__panel__button">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Hỗ trợ</span>
+                    </button>
+                    <button (click)="isOpenProfile=!isOpenProfile" class="app-layout__header__right__user__panel__button">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Thông tin cá nhân</span>
+                    </button>
+                    <button (click)="isOpenProfile=!isOpenProfile" class="app-layout__header__right__user__panel__button">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Cài đặt</span>
+                    </button>
+                    <button (click)="isOpenProfile=!isOpenProfile" class="app-layout__header__right__user__panel__button">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

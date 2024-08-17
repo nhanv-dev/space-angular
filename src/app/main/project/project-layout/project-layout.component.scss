@@ -1,0 +1,195 @@
+.project-layout.expanded .project-layout__sidebar {
+	left: calc(var(--width-extend-sidebar));
+}
+
+.project-layout ul {
+	list-style: none;
+}
+
+.project-layout__sidebar {
+	position: fixed;
+	left: calc(var(--width-sidebar));
+	top: calc(var(--height-header));
+	bottom: 0;
+	width: var(--width-sidebar-project);
+	background-color: #fff;
+	border-right: 1px solid #ccc;
+	transition: var(--trans-extend-layout);
+	padding: 12px;
+}
+
+.project-layout__sidebar__title {
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+.project-layout__sidebar__list {
+	margin-bottom: 16px;
+}
+
+.project-layout__sidebar__list__item {
+	position: relative;
+}
+
+.project-layout__sidebar__list__item__link {
+	text-decoration: none;
+	color: black;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 5px 12px;
+	font-size: 0.925rem;
+	font-weight: 500;
+	border-radius: var(--border-radius-medium);
+}
+
+.project-layout__sidebar__list__item__link i {
+	font-size: 14px;
+}
+
+.project-layout__sidebar__list__item__link:hover {
+	background-color: #ccc;
+}
+
+.project-layout__sidebar__list__item__favorite {
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 10;
+	font-size: 11px;
+}
+
+.project-layout__sidebar__list__item__favorite .fa-solid.fa-star {
+	color: #ffd43b;
+}
+
+.project-layout__sidebar__workspace {
+	position: relative;
+	margin-bottom: 12px;
+}
+
+.project-layout__sidebar__button-workspace {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 5px 10px;
+	border-radius: var(--border-radius-medium);
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.project-layout__sidebar__panel-workspace {
+	position: absolute;
+	top: 100%;
+	z-index: 50;
+	background-color: white;
+	width: 100%;
+	margin-top: 8px;
+	border-radius: var(--border-radius-medium);
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	overflow: hidden;
+}
+
+.project-layout__sidebar__panel-workspace__wrapper {
+	padding: 12px 0;
+	// height: max-content;
+	// max-height: 300px;
+	// height: 0px;
+	width: 100%;
+}
+
+.project-layout__sidebar__panel-workspace__item {
+	position: relative;
+}
+
+.project-layout__sidebar__panel-workspace__item__button {
+	width: 100%;
+	padding: 4px 12px;
+	font-size: 0.95rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-weight: 500;
+	transition: all .15s ease;
+}
+
+.project-layout__sidebar__panel-workspace__item__button:hover {
+	background-color: #f3f4f5;
+}
+
+.project-layout__body {
+	margin: 0 0 0 var(--width-sidebar-project);
+}
+
+.project-layout__body__toolbar {
+	padding: 12px 12px 6px 12px;
+	background-color: #efefef;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+.project-layout__body__tabs {
+	display: flex;
+	align-items: center;
+	justify-items: flex-start;
+	overflow: hidden;
+	gap: 4px;
+}
+
+.project-layout__body__tabs__line {
+	width: 3px;
+	opacity: .3;
+	height: 24px;
+	border-radius: 50px;
+	background-color: #ccc;
+	z-index: 100;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.project-layout__body__tab {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 6px 10px 4px;
+	min-width: 150px;
+	gap: 12px;
+	border-radius: var(--border-radius-medium);
+	border-bottom: 4px solid transparent;
+	font-size: 0.9rem;
+	font-weight: 500;
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+	transition: all 0s ease;
+}
+
+.project-layout__body__tab i {
+	position: relative;
+	top: 0.25px;
+}
+
+.project-layout__body__tab.active {
+	background-color: white;
+	border-bottom: 4px solid var(--primary-color);
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.project-layout__body__tab:hover {
+	background-color: white;
+	border-bottom: 4px solid var(--primary-color);
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.project-layout__body__tab:hover .project-layout__body__tabs__line {
+	display: none;
+}

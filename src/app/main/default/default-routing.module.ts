@@ -6,13 +6,7 @@ const routes: Routes = [
     {
         path: '',
         children: [
-            {
-                path: 'home', component: DefaultHomeComponent, data: {
-                    permission: 'Pages.Main.Default.Home',
-                    nav:'123'
-                }
-            },
-            { path: 'project', component: DefaultHomeComponent, data: { permission: 'Pages.Main.Default.Home' } },
+            { path: 'home', component: DefaultHomeComponent, data: { permission: 'Pages.Main.Default.Home' } },
         ]
     },
 ];

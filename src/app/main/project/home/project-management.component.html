@@ -1,0 +1,99 @@
+<div id="project-management-page" class="container-fluid">
+  <div class="thumbnail">
+    <div class="thumbnail__background" [ngStyle]="{'background-image': 'url(' + project.backgroundImage + ')'}">
+      <div class="thumbnail__background__group-button top right">
+        <button>
+          <i class="fa-regular fa-image"></i>
+        </button>
+        <button>
+          <i class="fa-regular fa-pen-to-square"></i>
+        </button>
+      </div>
+      <div class="thumbnail__project-icon">
+        <i [class]="project.icon"></i>
+      </div>
+    </div>
+  </div>
+  <div class="project-title">
+    <p class="project-title__line"></p>
+    {{project.projectName}}
+  </div>
+  <div class="project-properties mt-5">
+    <div class="project-properties__property">
+        <p class="project-properties__property__title">
+          Due date:
+        </p>
+        <div class="project-properties__property__content">
+           {{project.dueDateFrom | dateTimeFormat: 'fullDate'}}
+           <span class="mx-3">-</span>
+           {{project.dueDateTo | dateTimeFormat: 'fullDate'}}
+        </div>
+    </div>
+    <div class="project-properties__property">
+        <p class="project-properties__property__title project-assignees-title">
+          Assignees:
+        </p>
+        <div class="project-properties__property__content">
+          <div class="project-assignees">
+            <div class="project-assignee" *ngFor="let item of project.assignees">
+              <div class="project-assignee__avatar"  [ngStyle]="{'background-image': 'url(' + item.avatar + ')'}"></div>
+              <p class="project-assignee__name">
+                {{item.fullName}}
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="project-properties__property">
+        <p class="project-properties__property__title project-tags-title">
+          Label:
+        </p>
+        <div class="project-properties__property__content">
+          <div class="project-tags">
+            <div class="project-tag" *ngFor="let item of project.tags">
+              {{item.title}}
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="project-description">
+    {{project.description}}
+  </div>
+  <div class="project-tabs">
+    <app-tabs #tabs> 
+      <button tab-title (click)="tabs.setActiveTab(0)" class="project-tabs__button" [class.active]="tabs.isActiveTab(0)">
+        <i class="fa-solid fa-spinner"></i>
+        Todo
+      </button>
+      <button tab-title (click)="tabs.setActiveTab(1)" class="project-tabs__button" [class.active]="tabs.isActiveTab(1)">
+        <i class="fa-solid fa-spinner"></i>
+        In Progress
+      </button>
+      <button tab-title (click)="tabs.setActiveTab(2)" class="project-tabs__button" [class.active]="tabs.isActiveTab(2)">
+        <i class="fa-solid fa-spinner"></i>
+        Pending
+      </button>
+      <button tab-title (click)="tabs.setActiveTab(3)" class="project-tabs__button" [class.active]="tabs.isActiveTab(3)">
+        <i class="fa-solid fa-spinner"></i>
+        Comlete
+      </button>
+ 
+      <div tab-content *ngIf="tabs.isActiveTab(0)" class="project-tabs__content">
+        <h3>Content 1</h3>
+        <p>This is the content of Tab 1.</p>
+      </div>
+      <div tab-content *ngIf="tabs.isActiveTab(1)" class="project-tabs__content">
+        <h3>Content 2</h3>
+        <p>This is the content of Tab 2.</p>
+      </div>
+      <div tab-content *ngIf="tabs.isActiveTab(2)" class="project-tabs__content">
+        <h3>Content 3</h3>
+        <p>This is the content of Tab 3.</p>
+      </div>
+    </app-tabs>    
+  </div>
+  <div class="row mt-3">
+ 
+  </div>
+</div>

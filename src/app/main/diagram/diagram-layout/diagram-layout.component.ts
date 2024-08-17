@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedLayoutService } from '../../shared/services/shared-layout.service';
+import { SharedLayoutService } from '../../../shared/services/shared-layout.service';
 import { NgClass } from '@angular/common';
 
 @Component({

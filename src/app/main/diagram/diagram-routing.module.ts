@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { NavigationEnd, Router, RouterModule, Routes } from '@angular/router';
-import { DiagramLayoutComponent } from '../../layouts/diagram-layout/diagram-layout.component';
+import { DiagramLayoutComponent } from './diagram-layout/diagram-layout.component';
 import { DiagramHomeComponent } from './home/home.component';
 
 const routes: Routes = [
     {
-        path: 'diagram',
+        path: 'database',
         component: DiagramLayoutComponent,
         children: [
-            { path: 'home', component: DiagramHomeComponent, data: { permission: 'Pages.Diagram.Home' }, title: 'Space - Diagram' },
-            { path: '**', component: DiagramHomeComponent, data: { permission: 'Pages.Diagram.Home' }, title: 'Space - Diagram' },
+            { path: 'diagram', component: DiagramHomeComponent, data: { permission: 'Pages.Database.Diagram' }, title: 'Space - Diagram' },
+            { path: '**', component: DiagramHomeComponent, data: { permission: 'Pages.Database.Home' }, title: 'Space - Diagram' },
 
         ]
     }
