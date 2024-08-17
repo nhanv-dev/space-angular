@@ -29,14 +29,9 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
+            "styles": [ 
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "node_modules/@syncfusion/ej2-base/styles/material.css",
-              "node_modules/@syncfusion/ej2-buttons/styles/material.css",
-              "node_modules/@syncfusion/ej2-popups/styles/material.css",
-              "node_modules/@syncfusion/ej2-inputs/styles/material.css",
-              "node_modules/@syncfusion/ej2-diagrams/styles/material.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -96,14 +91,9 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
+            "styles": [ 
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "node_modules/@syncfusion/ej2-base/styles/material.css",
-              "node_modules/@syncfusion/ej2-buttons/styles/material.css",
-              "node_modules/@syncfusion/ej2-popups/styles/material.css",
-              "node_modules/@syncfusion/ej2-inputs/styles/material.css",
-              "node_modules/@syncfusion/ej2-diagrams/styles/material.css",
               "src/styles.scss"
             ],
             "scripts": []
