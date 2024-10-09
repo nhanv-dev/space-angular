@@ -1,0 +1,73 @@
+<table class="table table-bordered project-table">
+  <thead>
+    <tr class="project-table__header">
+      <th class="text-center"></th>
+      <th class="text-center">#</th>
+      <th class="project-table__">Project</th>
+      <th class="project-table__">Workspace</th>
+      <th class="project-table__">Tag</th>
+      <th class="project-table__">Assignees</th>
+      <th class="project-table__">Time</th>
+      <th class="text-center">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of list; let i=index">
+      <tr class="project-table__row">
+        <td class="project-table__row__button">
+          <button (click)="handleToggleExpand(i)" [id]="'project-table__row-button' + i" class="button">
+            <i class="fa-solid fa-caret-right"></i>
+          </button>
+        </td>
+        <td class="text-center">
+          {{i + 1}}
+        </td>
+        <td class="">
+          {{item.projectName}}
+        </td>
+        <td>
+          {{item.workspaceName}}
+        </td>
+        <td>
+          123
+        </td>
+        <td>
+          <div class="project-card__tags-list">
+            <div *ngFor="let _assignee of item.assignees" class="project-card__tags-item">
+              {{_assignee.fullName}}
+            </div>
+          </div>
+        </td>
+        <td>
+          {{item.dueDateFrom | dateTimeFormat: 'short'}} - {{item.dueDateFrom | dateTimeFormat: 'short'}}
+        </td>
+        <td class="project-table__row__button">
+          <button (click)="handleToggleExpand(i)" class="button">
+            <i class="fa-solid fa-ellipsis"></i>
+          </button>
+        </td>
+      </tr>
+      <tr class="project-table__hidden-row" [id]="'project-table__hiden-row' + i">
+        <td colspan="8">
+ 
+          <div class="project-card__tags-list">
+            <div>
+              Tags:
+            </div>
+            <div *ngFor="let _tag of item.tags" class="project-card__tags-item {{_tag.typeColor}}">
+              {{_tag.title}}
+            </div>
+          </div>
+          <div class="project-card__tags-list">
+            <div>
+              Tags:
+            </div>
+            <div *ngFor="let _tag of item.tags" class="project-card__tags-item {{_tag.typeColor}}">
+              {{_tag.title}}
+            </div>
+          </div>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

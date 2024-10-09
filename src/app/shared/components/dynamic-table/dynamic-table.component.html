@@ -1,0 +1,41 @@
+{{log(list)}}asdasdasd
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Contact</th>
+      <th>Country</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of list; let i=index">
+      <td class="text-center">
+        {{i + 1}}
+      </td>
+      <td>
+        {{item.projectName}}
+      </td>
+      <td>
+        {{item.workspaceName}}
+      </td>
+      <td>
+        <div class="project-card__tags-list">
+          <div *ngFor="let _tag of item.tags" class="project-card__tags-item {{_tag.typeColor}}">
+            {{_tag.title}}
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="project-card__tags-list">
+          <div *ngFor="let _assignee of item.assignees" class="project-card__tags-item">
+            {{_assignee.fullName}}
+          </div>
+        </div>
+      </td>
+      <td>
+        {{item.dueDateFrom | dateTimeFormat: 'short'}} - {{item.dueDateFrom | dateTimeFormat: 'short'}}
+      </td>
+    </tr> 
+  </tbody>
+</table>123

@@ -1,18 +1,20 @@
-import { Component, ViewChild, OnInit, ViewEncapsulation } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { SharedLayoutService } from '../../shared/services/shared-layout.service';
 import { LayoutHeaderComponent } from './header/header.component';
+import { RegionNavigationComponent } from './region-navigation/region-navigation.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TaskBarComponent } from './taskbar/taskbar.component';
-import { NgClass } from '@angular/common';
-import { SharedLayoutService } from '../../shared/services/shared-layout.service';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
   imports: [
+    NgClass,
     SidebarComponent,
     TaskBarComponent,
     LayoutHeaderComponent,
-    NgClass,
+    RegionNavigationComponent
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',

@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { SharedDataService } from "../../../shared/services/shared-data.service";
 
 @Component({
-    templateUrl: './project-management.component.html',
+    templateUrl: './project-detail.component.html',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.Default,
 })
-export class ProjectManagementComponent {
+export class ProjectDetailComponent {
     project!: Project;
     workspaceId: string | null = '';
     projectId: string | null = '';
@@ -25,12 +25,6 @@ export class ProjectManagementComponent {
     }
 
     ngOnInit(): void {
-        this.activatedRoute.paramMap.subscribe(params => {
-            this.workspaceId = params.get('workspace');
-            this.projectId = params.get('project');
-            if (!this.workspaceId) this.router.navigate(['/main/project/main-workspace'])
-        });
-
         this.project = {
             projectId: '1',
             projectName: 'Dự án Spotify',

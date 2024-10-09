@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
-import { DefaultModule } from './default/default.module';
-import { DiagramModule } from './diagram/diagram.module';
+import { LayoutComponent } from '../layouts/layout/layout.component';
 import { MainRoutingModule } from './main-routing.module';
-import { ProjectModule } from './project/project.module';
+import { MainComponent } from './main.component';
 
 @NgModule({
+  declarations: [
+    MainComponent
+  ],
   imports: [
-    DefaultModule,
-    DiagramModule,
-    ProjectModule,
+    LayoutComponent,
     MainRoutingModule,
   ],
-  declarations: [],
-  providers: []
+  exports: [],
+  providers: [],
+  bootstrap: [MainComponent]
 })
 export class MainModule { }

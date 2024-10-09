@@ -2,11 +2,12 @@ import { SharedLayoutService } from './../../../shared/services/shared-layout.se
 import { NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { RegionNavigationComponent } from "../region-navigation/region-navigation.component";
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [RouterModule, NgClass, NgIf, NgFor, NgClass, NgTemplateOutlet],
+  imports: [RouterModule, NgClass, NgIf, NgFor, NgClass, NgTemplateOutlet, RegionNavigationComponent],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
@@ -19,7 +20,7 @@ export class SidebarComponent {
       { groupName: 'General', routerLink: '/main/home', routerIcon: 'fa-solid fa-house', routerName: 'Trang chủ' },
       { groupName: 'General', routerLink: '/main/integrations', routerIcon: 'fa-solid fa-network-wired', routerName: 'Integrations' },
       { groupName: 'General', routerLink: '/main/maintance', routerIcon: 'fa-solid fa-screwdriver-wrench', routerName: 'Bảo trì' },
-      { groupName: 'Workspace', routerLink: '/main/project', routerIcon: 'fa-solid fa-list-ul', routerName: 'Quản lý dự án' },
+      { groupName: 'Workspace', routerLink: '/main/workspaces', routerIcon: 'fa-solid fa-list-ul', routerName: 'Quản lý dự án' },
       { groupName: 'Workspace', routerLink: '/main/project/calendar', routerIcon: 'fa-solid fa-calendar', routerName: 'Lịch hoạt động' },
       { groupName: 'Workspace', routerLink: '/main/project/dashboard', routerIcon: 'fa-solid fa-chart-pie', routerName: 'Thống kê' },
       { groupName: 'Workspace', routerLink: '/main/dashboard', routerIcon: 'fa-solid fa-chart-pie', routerName: 'Dashboard' },

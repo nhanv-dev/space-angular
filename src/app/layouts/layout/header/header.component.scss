@@ -1,6 +1,6 @@
 .app-layout__header {
     height: var(--height-header);
-    margin-left: var(--width-sidebar);
+    margin-left: calc(var(--width-sidebar) + var(--width-region-navigation));
     color: black;
     background-color: var(--background-header);
     display: flex;
@@ -23,7 +23,7 @@
 }
 
 .app-layout__header.expanded {
-    margin-left: var(--width-extend-sidebar);
+    margin-left: calc(var(--width-extend-sidebar) + var(--width-region-navigation));
 }
 
 .app-layout__header__breadcrumb {

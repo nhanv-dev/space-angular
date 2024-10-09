@@ -1,0 +1,90 @@
+.region-navigation {
+    // position: fixed;
+    // left: 0px;
+    // top: 0;
+    // bottom: 0;
+    width: var(--width-region-navigation);
+    background-color: rgb(234, 234, 234);
+    color: var(--color-sidebar);
+    z-index: 100;
+    border-right: 1px solid #ccc;
+    transition: var(--trans-extend-layout), all 0.25s ease;
+}
+
+.region-navigation__container {
+    display: flex;
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.region-navigation__container__button {
+    border-radius: 0.35rem;
+    width: 31px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+}
+
+.region-navigation__container__button--chart {
+    background-color: #384B70;
+
+    path {
+        fill: #eaefed;
+    }
+}
+
+.region-navigation__container__button--database {
+    background-color: #004643;
+
+    path {
+        fill: #FFF;
+    }
+}
+
+.region-navigation__container__button--layout {
+    background-color: #A02334;
+
+    path {
+        fill: #FFF;
+    }
+}
+
+.region-navigation__container__button--workspace {
+    background-color: #1F316F;
+
+    svg {
+        color: #fff;
+    }
+}
+
+.region-navigation__container__button--add {
+    background-color: #6DA4AA;
+
+    svg {
+        color: #fff;
+    }
+}
+
+.region-navigation__container__button-add {
+    border-radius: var(--border-radius-medium);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 24px;
+        height: 24px;
+        color: blue;
+    }
+}

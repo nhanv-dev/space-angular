@@ -1,0 +1,38 @@
+<div id="project-management-page" class="container-fluid">
+ 	<app-tabs #tabs classButton="projects-toolbar">
+		<button tab-title (click)="tabs.setActiveTab(0)" class="projects-toolbar__button" [class.active]="tabs.isActiveTab(0)">
+			List
+		</button>
+		<button tab-title (click)="tabs.setActiveTab(1)" class="projects-toolbar__button" [class.active]="tabs.isActiveTab(1)">
+			Gallery
+		</button>
+		<div tab-content *ngIf="tabs.isActiveTab(0)" class="project-tabs__content">
+			<project-table [list]="projects"></project-table>
+		</div>
+		<div tab-content *ngIf="tabs.isActiveTab(1)" class="project-tabs__content">
+			<div class="project-cotainer-gallery">
+				<div class="row">
+					<ng-container *ngFor="let _project of projects">
+						<div class="col-6 col-md-4 col-lg-3 col-xl-2">
+							<div class="project-card">
+								<p>{{_project.projectName}}</p>
+								<p class="project-card__description">{{_project.description}}</p>
+		
+								<div class="project-card__tags-list">
+									<div *ngFor="let _tag of _project.tags" class="project-card__tags-item {{_tag.typeColor}}">
+										{{_tag.title}}
+									</div>
+								</div>
+								<div class="project-card__date">
+									{{_project.dueDateFrom | dateTimeFormat: 'short'}} - {{_project.dueDateFrom | dateTimeFormat: 'short'}}
+								</div>
+							</div>
+						</div>
+					</ng-container> 
+				</div>
+			</div>
+		</div>
+	</app-tabs> 
+
+</div>
+ 

@@ -1,4 +1,4 @@
-import { ViewEncapsulation } from '@angular/core';
+import { Input, ViewEncapsulation } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class AppTabsComponent {
+  @Input() classButton: string = '';
+  @Input() classContent: string = '';
   activeTab: number = 0;
 
   setActiveTab(index: number) {

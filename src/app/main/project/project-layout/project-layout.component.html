@@ -20,7 +20,7 @@
         </div>
         <ul class="project-layout__sidebar__list">
             <li *ngFor="let project of projects" class="project-layout__sidebar__list__item">
-                <a class="project-layout__sidebar__list__item__link" [routerLink]="project.link">
+                <a class="project-layout__sidebar__list__item__link" [routerLink]="project.link + '/' + project.link">
                     <i [class]="project.icon"></i> <span>{{project.name}}</span>
                 </a>
                 <button class="project-layout__sidebar__list__item__favorite">
@@ -43,6 +43,10 @@
     <div class="project-layout__body">
         <div class="project-layout__body__toolbar">
             <div class="project-layout__body__tabs">
+                <button class="project-layout__body__tab-home" [ngClass]="{'active': isActive==-1}"> 
+                    <i class="fa-solid fa-house"></i>
+                    <!-- <span>Home</span>  -->
+                </button>
                 <ng-container *ngFor="let item of projects; index as i">
                     <button     
                         (click)="handleChangeTab(i)" 

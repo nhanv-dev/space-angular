@@ -9,7 +9,7 @@ body.loading {
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 1000; 
+        z-index: 1000;
     }
 
     .spinner {
@@ -38,11 +38,11 @@ body.loading {
 
     &__main__body {
         height: 100%;
-        margin-left: var(--width-sidebar);
+        margin-left: calc(var(--width-sidebar) + var(--width-region-navigation));
         transition: var(--trans-extend-layout);
 
         &.extended {
-            margin-left: var(--width-extend-sidebar);
+            margin-left: calc(var(--width-extend-sidebar) + var(--width-region-navigation));
         }
     }
 }

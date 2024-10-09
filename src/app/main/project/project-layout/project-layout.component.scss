@@ -1,5 +1,5 @@
 .project-layout.expanded .project-layout__sidebar {
-	left: calc(var(--width-extend-sidebar));
+	left: calc(var(--width-extend-sidebar) + var(--width-region-navigation));
 }
 
 .project-layout ul {
@@ -8,7 +8,7 @@
 
 .project-layout__sidebar {
 	position: fixed;
-	left: calc(var(--width-sidebar));
+	left: calc(var(--width-sidebar) + var(--width-region-navigation));
 	top: calc(var(--height-header));
 	bottom: 0;
 	width: var(--width-sidebar-project);
@@ -49,7 +49,7 @@
 }
 
 .project-layout__sidebar__list__item__link:hover {
-	background-color: #ccc;
+	background-color: var(--background-sidebar-link-hover);
 }
 
 .project-layout__sidebar__list__item__favorite {
@@ -119,7 +119,8 @@
 }
 
 .project-layout__sidebar__panel-workspace__item__button:hover {
-	background-color: #f3f4f5;
+	background-color: var(--background-sidebar-link-hover);
+
 }
 
 .project-layout__body {
@@ -192,4 +193,10 @@
 
 .project-layout__body__tab:hover .project-layout__body__tabs__line {
 	display: none;
+}
+
+.project-layout__body__tab-home {
+	// background: ;
+	padding: 5px 15px;
+	// box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
