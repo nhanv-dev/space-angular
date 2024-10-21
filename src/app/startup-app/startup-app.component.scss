@@ -1,3 +1,10 @@
+:root {
+	--background-container: rgba(0, 0, 0, 0.4);
+	--background-container-gray: rgba(50, 50, 50, 0.5);
+	--background-container-white: rgba(255, 255, 255, 0.1);
+	--blur-container: 10px;
+}
+
 .startup-layout {
 	width: 100vw;
 	height: 100vh;
@@ -25,7 +32,7 @@
 .startup-layout__backdrop {
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.0);
+	// background-color: rgba(0, 0, 0, 0.1);
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -42,73 +49,110 @@
 	height: 100%;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
 }
 
 .startup-layout__srollable {
-	height: 100%;
+	flex: 1;
+	max-height: 80vh;
 	overflow: hidden;
 	overflow-y: scroll;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
-	max-width: 100vw;
-	width: 100%;
 }
 
 .startup-layout__srollable::-webkit-scrollbar {
 	display: none;
 }
 
-.startup-layout__header {
+.startup-layout__options {
 	display: flex;
 	align-items: center;
-	padding: 1rem;
-	background-color: rgba(0, 0, 0, 0.6);
-	border-radius: 0.5rem;
-	backdrop-filter: blur(10px);
-	width: 700px;
-	margin: 0 auto 1rem;
+	justify-content: center;
+}
+
+.startup-layout__options__flex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	max-height: max-content;
+	gap: 0.5rem;
+	padding: 8px;
+	background-color: var(--background-container-gray);
+	border-radius: 50px;
+	backdrop-filter: blur(var(--blur-container));
+}
+
+.startup-layout__options__button {
+	border-radius: 50px;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
+	width: 38px;
+	height: 38px;
+
+	svg {
+		width: 22px;
+		height: 22px;
+		position: relative;
+		top: -0.5px;
+	}
+
+	&.active {
+		background-color: var(--background-container-white);
+	}
+}
+
+.startup-layout__navbar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	gap: 1rem;
 }
 
-.startup-layout__header__flex {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	gap: 6px;
-
-}
-
-.startup-layout__container__item {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	padding: 1rem 1rem;
-	background-color: rgba(0, 0, 0, 0.6);
-	border-radius: 0.5rem;
-	backdrop-filter: blur(10px);
-	width: max-content;
-}
-
-.startup-layout__header__clock {
-	background-color: rgba(0, 0, 0, 0.6);
-	padding: 4px 16px;
+.startup-layout__navbar__container {
 	border-radius: 50px;
-	font-size: 12px;
+	background-color: var(--background-container);
+	backdrop-filter: blur(var(--blur-container));
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: max-content;
+	gap: 1rem;
+	padding: 1rem;
 }
 
-.startup-layout__header__button {
-	background-color: rgba(0, 0, 0, 0.6);
-	border-radius: 0.5rem;
-	width: 36px;
-	height: 36px;
+.startup-layout__main {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
 
-	svg {
-		width: 18px;
-		height: 18px;
-	}
+.startup-layout__main__container {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.startup-layout__chat {
+	width: 260px;
+	background-color: var(--background-container);
+	border-radius: var(--border-radius-large);
+	height: 100%;
+}
+
+.startup-layout__container-app {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	max-height: max-content;
+	padding: 1rem 1rem;
+	background-color: var(--background-container);
+	border-radius: var(--border-radius-large);
+	backdrop-filter: blur(var(--blur-container));
+	width: max-content;
 }
 
 .startup-layout__container__item__button-app {
@@ -117,13 +161,11 @@
 	align-items: center;
 	gap: 6px;
 	font-weight: 500;
-
-	// height: 50px;
 	color: var(--white-color);
 
 	svg {
-		width: 36px;
-		height: 36px;
+		width: 30px;
+		height: 30px;
 	}
 }
 
@@ -158,16 +200,15 @@
 	}
 }
 
-.startup-layout__chat {
+.startup-layout__chat-gpt {
 	position: relative;
-	width: 400px;
-	height: 200px;
-	border-radius: 0.5rem;
-	margin-bottom: 1rem;
+	width: 300px;
+	height: 160px;
+	border-radius: var(--border-radius-large);
 }
 
-.startup-layout__chat__background {
-	border-radius: 0.5rem;
+.startup-layout__chat-gpt__background {
+	border-radius: var(--border-radius-large);
 	width: 100%;
 	height: 100%;
 	background-position: center;
@@ -175,7 +216,7 @@
 	background-size: cover;
 }
 
-.startup-layout__chat__container {
+.startup-layout__chat-gpt__container {
 	position: absolute;
 	right: 1.5rem;
 	bottom: 1.5rem;
@@ -184,17 +225,71 @@
 	justify-content: center;
 }
 
-.startup-layout__chat__container__button {
-	padding: 6px 18px;
+.startup-layout__chat-gpt__container__button {
+	padding: 5px 15px;
 	background-color: var(--white-color);
 	color: var(--black-color);
 	border-radius: 50px;
 	color: var(--black-color);
 	font-weight: 600;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	text-transform: capitalize;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+
+	i {
+		font-size: 16px;
+		display: none;
+	}
 }
 
-.color-white {
-	color: var(--white-color);
+
+// ==================== Begin Weather ====================
+.weather-display {
+	position: relative;
+	width: 350px;
+	height: 300px;
+	border-radius: var(--border-radius-large);
+	overflow: hidden;
+	background-color: var(--background-container);
 }
+
+.weather-display__background {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: var(--border-radius-large);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.weather-display__info {
+	position: absolute;
+	padding: 2rem;
+}
+
+// ==================== End Weather ====================
+
+
+// ==================== Begin App ====================
+
+.startup-layout__logo {
+	width: 32px;
+	height: 32px;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.startup-layout__logo--dribble {}
+
+// ==================== End App ====================

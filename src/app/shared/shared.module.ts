@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { DatetimeFormatPipe } from './pipes/DatetimeFormatPipe';
 import { AppTabsComponent } from './components/app-tabs/app-tabs.component';
 import { DynamicTableComponent } from './components/dynamic-table/dynamic-table.component';
+import { AppChatComponent } from './components/app-chat/app-chat.component';
 
 @NgModule({
   declarations: [
     DatetimeFormatPipe,
+    AppChatComponent,
     AppTabsComponent,
     DynamicTableComponent,
   ],
@@ -18,6 +20,7 @@ import { DynamicTableComponent } from './components/dynamic-table/dynamic-table.
   ],
   exports: [
     DatetimeFormatPipe,
+    AppChatComponent,
     AppTabsComponent,
     DynamicTableComponent,
   ]

@@ -1,0 +1,21 @@
+<div id="app-chat-component">
+  <div class="app-chat">
+    <div class="app-chat__group" *ngFor="let group of groups">
+      <p class="app-chat__group__name">{{group.name}}</p>
+      <ul class="app-chat__group__list">
+        <li *ngFor="let chat of group.listChat" class="app-chat__group__item">
+          <div class="app-chat__group__item__image" style="background-image: url({{chat.image}});">
+            <p class="app-chat__group__item__status"></p>
+          </div>
+          <p class="app-chat__group__item__name">
+            {{chat.displayName}}
+          </p> 
+        </li>
+      </ul>
+    </div>
+    <div class="app-chat__tool">
+      Search
+
+    </div>
+  </div>
+</div>

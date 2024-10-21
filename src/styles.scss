@@ -2,7 +2,7 @@
 :root {
     /* ---------------------------- Responsive layout --------------------------- */
     --width-sidebar: 50px;
-    --width-extend-sidebar: 200px;
+    --width-extend-sidebar: 190px;
     --width-region-navigation: 50px;
     --height-header: 60px;
     --height-taskbar: 46px;
@@ -16,7 +16,7 @@
     --background-body: #ccc;
     --border-radius-small: 0.2rem;
     --border-radius-medium: 0.25rem;
-    --border-radius-large: 0.3rem;
+    --border-radius-large: 0.5rem;
     --spacing-small: 8px;
     --spacing-medium: 16px;
     --spacing-large: 24px;
@@ -50,7 +50,6 @@
 
 * {
     box-sizing: border-box;
-
     margin: 0;
     padding: 0;
 }
@@ -74,9 +73,8 @@ body {
     background-color: #fefcfc;
 
     &::-webkit-scrollbar {
-        width: 20px;
+        width: 8px;
         padding: 2px;
-
         margin: 2px;
     }
 

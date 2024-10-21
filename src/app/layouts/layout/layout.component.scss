@@ -38,7 +38,7 @@ body.loading {
 
     &__main__body {
         height: 100%;
-        margin-left: calc(var(--width-sidebar) + var(--width-region-navigation));
+        margin-left: calc(var(--width-region-navigation));
         transition: var(--trans-extend-layout);
 
         &.extended {

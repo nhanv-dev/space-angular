@@ -6,9 +6,10 @@ const routes: Routes = [{
   path: '',
   component: MainComponent,
   children: [
-    { path: '', loadChildren: () => import('./default/default.module').then(m => m.DefaultModule) },
+    { path: 'person', loadChildren: () => import('./default/default.module').then(m => m.DefaultModule) },
     { path: 'diagram', loadChildren: () => import('./diagram/diagram.module').then(m => m.DiagramModule) },
     { path: 'workspaces', loadChildren: () => import('./project/project.module').then(m => m.ProjectModule) },
+    { path: '', redirectTo: 'person', pathMatch: 'full' },
     { path: '**', redirectTo: '' }
   ]
 }];

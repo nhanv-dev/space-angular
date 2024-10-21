@@ -3,10 +3,10 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { StartupAppComponent } from './startup-app/startup-app.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: 'startup', component: StartupAppComponent },
   { path: 'main', loadChildren: () => import('./main/main.module').then(m => m.MainModule) },
-  { path: '**', redirectTo: 'main' }
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: '**', redirectTo: 'main', pathMatch: 'full' }
 ];
 
 @NgModule({

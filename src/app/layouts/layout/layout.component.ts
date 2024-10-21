@@ -2,7 +2,6 @@ import { NgClass } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { SharedLayoutService } from '../../shared/services/shared-layout.service';
 import { LayoutHeaderComponent } from './header/header.component';
-import { RegionNavigationComponent } from './region-navigation/region-navigation.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TaskBarComponent } from './taskbar/taskbar.component';
 
@@ -13,8 +12,7 @@ import { TaskBarComponent } from './taskbar/taskbar.component';
     NgClass,
     SidebarComponent,
     TaskBarComponent,
-    LayoutHeaderComponent,
-    RegionNavigationComponent
+    LayoutHeaderComponent, 
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
